@@ -1,18 +1,30 @@
-body {
-	font-style: Arial;
+/* RESET CSS*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {margin: 0;padding: 0;border: 0;font-size: 100%;font: inherit;vertical-align: baseline;font-family:arial;}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, img {display: block;}
+ol, ul {list-style: none;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after, q:before, q:after {content: '';content: none;}
+table {border-collapse: collapse;border-spacing: 0;}
+a{text-decoration:none;display:block;}
+
+/************************************/
+/************************************/
+/************************************/
+
+#container-header-top{
+	background-color:#2e2e2E;
 }
 
-.mh-pas-inscrit {
-	display: flex;
-	align-item: center;
-	text-align: right;
-	padding-right: 9px;
+#header-top{
+	width:1100px;
+	margin:0 auto;
 }
-.mh-nav-p {
-	padding-top: 10px;
+#header-top ul{
+	display:flex;
+	justify-content:space-between;
 }
 
-i{
-	border: 3px solid white;
-	border-radius: 50%; 
-}
+
+
+
