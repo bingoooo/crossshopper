@@ -6,12 +6,29 @@
 	<link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-	<nav></nav>
+	<nav id="nav"></nav>
 	<section>
-		Test
+		<input id="path" type="text"><button id="execute">URL</button><br>
+	<form action="http://crossshopper.com/api/Challenge" method="POST"></form>
+		<input id="title" type="text"><br>
+		<input id="description" type="text">><br>
+		<input id="price" type="text"><br>
+		<input id="image" type="text"><br>
+		<div id="challenge"></div>
+		<div id="offers"></div>
 	</section>
-	<footer></footer>
+	<footer id="footer"></footer>
 	<script src="/js/jquery.js"></script>
+	<script src="/js/mustache.js"></script>
 	<script src="/js/app.js"></script>
+	<script id="challenge-tpl">
+		
+	</script>
+	<script id="offer-tpl" type="text/plain">
+		{{{title}}}<br>
+		{{{description}}}<br>
+		<img src={{{image}}} /><br>
+		{{{price}}}<br>
+	</script>
 </body>
 </html>
