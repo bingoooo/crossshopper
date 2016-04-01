@@ -11,3 +11,8 @@ body {
 .mh-nav-p {
 	padding-top: 10px;
 }
+
+i{
+	border: 3px solid black;
+	border-radius: 50%; 
+}
