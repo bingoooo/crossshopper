@@ -12,18 +12,53 @@ a{text-decoration:none;display:block;}
 /************************************/
 /************************************/
 
-#container-header-top{
-	background-color:#2e2e2E;
+
+/************************************/
+/**************  HEADER TOP  **********************/
+/************************************/
+
+#container-header-top{background-color:#2e2e2E;padding:10px 0;}
+#header-top{/*width:1100px;*/margin:0 auto;font-size:15px;}
+#header-top a, #header-top p,#header-top li{color:#ccc;}
+#header-top ul{display:flex;justify-content:space-around;align-items:center;padding-top:5px;}
+#header-top ul li a{display:block;}
+#header-top form{text-align:right;}
+#header-top form p, #header-top form input{display:inline-block;vertical-align:middle;}
+#header-top form input{width:150px;background:#212121;border-radius:5px;-webkit-border-radius:5px;border:1px solid #333;padding:5px;}
+#header-top form input[type="submit"]{width:50px;background:#9e1b61;color:#fff;}
+input, textarea {color: #aaa;}
+input:-moz-placeholder, textarea:-moz-placeholder {color: #aaa;}
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #aaa;}
+input.placeholder, textarea.placeholder {color: #aaa;}
+
+/************************************/
+/**************  NAVIGATION **********************/
+/************************************/
+
+.navbar-default{
+	background:#fff;
+	color:#2e2e2e;
+}
+.navbar-form .form-group label{
+	color:#777;
+}
+.navbar-form .form-group input{
+	background:#9e1b61;
+	border:none;
+	border-radius:5px;-webkit-border-radius:5px;
+	padding:10px;
+	color:#fff;
+	width:inherit;
+}
+.nav > li:first-child > a{
+	padding-left:0;
 }
 
-#header-top{
-	width:1100px;
-	margin:0 auto;
-}
-#header-top ul{
-	display:flex;
-	justify-content:space-between;
-}
+
+
+
+
+
 
 
 
