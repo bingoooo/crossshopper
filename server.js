@@ -57,6 +57,6 @@ app.get('/api/scrap', function(req, res, next){
 	});
 });
 
-app.listen(3000, () => {
+app.listen(3000, function()  {
 	console.log('CrossShopper, http://127.0.0.1:3000');
 });

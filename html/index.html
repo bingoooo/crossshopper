@@ -4,85 +4,90 @@
 	<title>CrossShopper</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="/css/style.css">
-	<link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+	<meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, user-scalable=no"/>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-</head>
-
-<body class="container-fluid">
 	
 
-	<nav class="navbar navbar-inverse">
-	<ul class="nav-form navbar-left list-unstyled list-inline">
-			<li class="active">
-				<p class="">suivez-nous</p>
-			</li>
-			<li class="active">
-				<i class="fa fa-facebook"></i>
-			</li>
-			<li class="active">
-				<i class="fa fa-twitter"></i>
-			</li>
-			<li class="active">
-				<i class="fa fa-youtube-square"></i>
-			</li>
-	</ul>
-	<ul class="nav-form navbar-right list-unstyled list-inline">							
-		<li><p class="">inscrit ?</p></li>
-		<form class="">
-			<li class=""><input type="text" name="name" placeholder="login" class=""></li>
-			<li class=""><input type="text" name="mot-de-passe" placeholder="mot de passe" class=""></li>
-		</form>
-	</ul>
-	</nav>						
+</head>
+<body >
+	<header>
+		<div class="container-fluid" id="container-header-top">
+			<div class="container" id="header-top">
+				<div class="row">
+					<div class="col-md-3">
+						<ul>
+							<li>Suivez-nous :</li>
+							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+							<li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
+						</ul>
+					</div>
+					<div class="col-md-2"></div>
+					<div class="col-md-7">
+						<form>
+							<fieldset>
+								<p>Identifiez vous :</p>
+								<input type="text" name="login" id="login" placeholder="login..."/>
+								<input type="password" name="pwd" id="pwd" placeholder="password..."/>
+								<input type="submit" name="beLog" id="beLog" value="go" />
+							</fieldset>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav class="navbar navbar-default">
+		  <div class="container-fluid">
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    <div class="container">
+			    <div class="navbar-header">
+			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			        <span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			      </button>
+			      <a class="navbar-brand" href="#"><img src="" title="" alt=""/></a>
+			    </div>
 
-	<img src="../public/img/logoHorizontalNoir.png" class="col-md-2">
-	<ul class="list-unstyled list-inline">
-		<li class="col-md-1">
-			<a href="#">
-				<p class="text-center">Comment ça marche ?</p>
-			</a>
-		</li>
-		<li class="col-md-1">
-			<a href="#">
-				<p class="text-center .mh-nav-p">A propos</p>
-			</a>
-		</li>
-		<li class="col-md-1">
-			<a href="#">
-				<p class="text-center .mh-nav-p">Contactez nous</p>
-			</a>
-		</li>
-		<li class="col-md-offset-4 col-md-1">
-			<p class="text-right mh-nav-p">Vous n'etes pas inscrit ?</p>
-		</li>
-		<li class="col-md-1">
-			<button class="btn btn-default">
-				<a href="#">
-					<p class="mh-nav-p">Devenez chopper
-					</p>
-				</a>
-			</button>
-		</li>
-	</ul>
-	<div class="">
-		
-	</div>
+			    <!-- Collect the nav links, forms, and other content for toggling -->
+			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			      <ul class="nav navbar-nav">
+			        <!--<li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li><-->
+			        <li><a href="#">Comment ça marche</a></li>
+			        <li><a href="#">&Agrave; propos</a></li>
+			        <li><a href="#">Contactez nous</a></li>
+			      </ul>
+			      <form class="navbar-form navbar-right">
+			        <div class="form-group">
+			        	<label>Vous n'êtes pas encore inscrit ?</label>
+			          <input type="button" value="Devenez shopper">
+			        </div>
+			      </form>
+			    </div><!-- /.navbar-collapse -->
+			  </div>
+		  </div><!-- /.container-fluid -->
+		</nav>
+	</header>
+	
 
-
+<!-- jumbotron -->
 <div class="container-fluid mh-jumbotron">
 	<div class="container">
-	<div class="col-md-5">
+	<div class="col-md-5 mh-container-jumbotron">
 
-		<p class="text-center">Vous cherchez un produit moins cher ?</p>
-		<p class="text-center">Notre communauté trouve pour vous</p>
-		<button class="btn btn-danger mh-button-chercher"><a href="#">On cherche pour moi</a></button>
+		<h3 class="text-center mh-julbotron-title">Vous cherchez un produit moins cher ?</h3>
+		<h3 class="text-center mh-julbotron-title">Notre communauté trouve pour vous</h3>
+		<button class="btn btn-danger mh-button-chercher"><a href="#"><h4 class="mh-title-button">On cherche pour moi</h4></a></button>
 		<p class="mh-paragraphe-1">Des internautes vont chercher les meilleurs offres pour vous</p>
 		<p class="mh-paragraphe-1">Faire des économies de temps et d'argent !</p>
 	</div>
-	<div class="col-md-offset-2 col-md-5">
-		<p class="text-center">Vous avez des bon plans</p>
-		<p class="text-center">Partagez les et gagner en retour !</p>
-		<button class="btn btn-default mh-button-shopper"><a href="">Je suis shopper</a></button>
+	<div class="col-md-offset-2 col-md-5 mh-container-jumbotron">
+		<h3 class="text-center mh-julbotron-title">Vous avez des bon plans</h3>
+		<h3 class="text-center mh-julbotron-title">Partagez les et gagner en retour !</h3>
+		<button class="btn btn-default mh-button-shopper"><a href=""><h4 class="mh-title-button">Je suis shopper</h4></a></button>
 		<p class="mh-paragraphe-2">rejoignez une grande comunauté.</p>
 		<p class="mh-paragraphe-2">choissisez une mission et proposez vos bon plan !</p>
 		<p class="mh-paragraphe-2">Gagner de l'argent quand vos propositions sont choisi</p>
@@ -90,10 +95,45 @@
 	</div>	
 	</div>	
 </div>	
+	<section id="presentation-concept" class="container-fluid">
+		<div id="becomeCross">
+			<div class="container">
+				<div class="row">
+					<article class="col-md-6">
+						<h1 class="titre-pre">Devenez un CrossShoper</h1>
+						<p>Répondez aux missions shopping qui vous plaisent, quand vous voulez et où vous voulez.</p>
+						<p>Gagnez des points pour chaque mission accomplie et convertissez les en argent, en bons d'achat ou en crédirs pour lancer votre propre demande de recherche.</p>
+						<p>Comme quoi aidez les autres ça rapporte !</p>
+						<button>proposez des prix</button>
+					</article>
+					<div class="col-md-6"></div>
+				</div>
+			</div>
+		</div>
+	</section>
 
 
-	<script src="../public/js/jquery.js"></script>
-	<script src="../public/js/app.js"></script>
-
+	<script src="js/jquery.js"></script>
+	<script src="js/app.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
