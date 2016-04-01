@@ -38,23 +38,47 @@ input.placeholder, textarea.placeholder {color: #aaa;}
 .navbar-default{
 	background:#fff;
 	color:#2e2e2e;
+	padding:10px 0;
+}
+.navbar-form{
+	padding-right:0;
 }
 .navbar-form .form-group label{
 	color:#777;
+	margin-right:15px;
 }
 .navbar-form .form-group input{
 	background:#9e1b61;
 	border:none;
 	border-radius:5px;-webkit-border-radius:5px;
-	padding:10px;
+	padding:10px 20px;
 	color:#fff;
 	width:inherit;
 }
 .nav > li:first-child > a{
 	padding-left:0;
 }
+#presentation-concept{
+	color:#fff;
+	padding:0;
+}
 
+#becomeCross{
+	background:#3f2d3d;
+}
+#becomeCross article{
+	padding:60px 30px;
 
+}
+#becomeCross p{
+	margin-bottom:20px;
+	font-size:20px;
+}
+.titre-pre{
+	font-size:40px;
+	font-weight:900;
+	margin-bottom:30px;
+}
 
 
 
