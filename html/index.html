@@ -3,32 +3,73 @@
 <head>
 	<title>CrossShopper</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="../public/css/style.css">
+	<link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
-<body>
-	<nav id="nav"></nav>
-	<section>
-		<input id="path" type="text"><button id="execute">URL</button><br>
-	<form action="http://crossshopper.com/api/Challenge" method="POST"></form>
-		<input id="title" type="text"><br>
-		<input id="description" type="text">><br>
-		<input id="price" type="text"><br>
-		<input id="image" type="text"><br>
-		<div id="challenge"></div>
-		<div id="offers"></div>
-	</section>
-	<footer id="footer"></footer>
-	<script src="/js/jquery.js"></script>
-	<script src="/js/mustache.js"></script>
-	<script src="/js/app.js"></script>
-	<script id="challenge-tpl">
-		
-	</script>
-	<script id="offer-tpl" type="text/plain">
-		{{{title}}}<br>
-		{{{description}}}<br>
-		<img src={{{image}}} /><br>
-		{{{price}}}<br>
-	</script>
+
+<body class="container-fluid">
+	
+
+	<nav class="navbar navbar-inverse">
+	<ul class="nav-form navbar-left list-unstyled list-inline">
+			<li class="active">
+				<p class="">suivez-nous</p>
+			</li>
+			<li class="active">
+				<i class="fa fa-facebook"></i>
+			</li>
+			<li class="active">
+				<i class="fa fa-twitter"></i>
+			</li>
+			<li class="active">
+				<i class="fa fa-youtube-square"></i>
+			</li>
+	</ul>
+	<ul class="nav-form navbar-right list-unstyled list-inline">							
+		<li><p class="">inscrit ?</p></li>
+		<form class="">
+			<li class=""><input type="text" name="name" placeholder="login" class=""></li>
+			<li class=""><input type="text" name="mot-de-passe" placeholder="mot de passe" class=""></li>
+		</form>
+	</ul>
+	</nav>						
+
+	<img src="../public/img/logoHorizontalNoir.png" class="col-md-2">
+	<ul class="list-unstyled list-inline">
+		<li class="col-md-1">
+			<a href="#">
+				<p class="text-center">Comment ça marche ?</p>
+			</a>
+		</li>
+		<li class="col-md-1">
+			<a href="#">
+				<p class="text-center .mh-nav-p">A propos</p>
+			</a>
+		</li>
+		<li class="col-md-1">
+			<a href="#">
+				<p class="text-center .mh-nav-p">Contactez nous</p>
+			</a>
+		</li>
+		<li class="col-md-offset-4 col-md-1">
+			<p class="text-right mh-nav-p">Vous n'etes pas inscrit ?</p>
+		</li>
+		<li class="col-md-1">
+			<button class="btn btn-default">
+				<a href="#">
+					<p class="mh-nav-p">Devenez chopper
+					</p>
+				</a>
+			</button>
+		</li>
+	</ul>
+
+	
+
+
+	<script src="../public/js/jquery.js"></script>
+	<script src="../public/js/app.js"></script>
+
 </body>
 </html>
