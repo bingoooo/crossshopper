@@ -2,7 +2,6 @@
 
 function getChallenges(){
 	fetch('http://crossshopper.com/api/Challenge')
-	// fetch('/api/Challenge')
 		.then(
 			function(response){
 				response.json().then(function(data){
@@ -13,7 +12,6 @@ function getChallenges(){
 };
 
 function getChallenge(id){
-	// fetch('http://crossshopper.com/api/Challenge/' + id)
 	fetch('/api/Challenge?id=' + id)
 		.then(
 			function(response){
@@ -26,7 +24,6 @@ function getChallenge(id){
 
 function postChallenge(id, title, description, price, image, type){
 	$.ajax({
-		// url: 'http://crossshopper.com/api/Challenge',
 		url: '/api/Challenge',
 		type: 'post',
 		dataType: 'json',
@@ -46,7 +43,6 @@ function postChallenge(id, title, description, price, image, type){
 };
 
 function getOffers(id){
-	// fetch('http://crossshopper.com/GetOffersFromChallenge?ChallengeId=' + id)
 	fetch('/GetOffersFromChallenge?ChallengeId=' + id)
 		.then(
 			function(response){
@@ -59,7 +55,6 @@ function getOffers(id){
 
 function getOffer(id){
 	$.ajax({
-		// url: 'http://crossshopper.com/api/Offer/' + id,
 		url: '/api/Offer/' + id,
 		type: 'post',
 		dataType: 'json',
@@ -73,7 +68,6 @@ function postOffer(id, title, description, ID, ChallengeID, amount, expiref, pri
 	var end = new Date(Date.now()+(1000*60*60*24*2));
 	start = start.toDateString();
 	$.ajax({
-		// url: 'http://crossshopper.com/api/Offer',
 		url: '/api/Offer',
 		type: 'post',
 		dataType: 'json',
@@ -96,7 +90,6 @@ function postOffer(id, title, description, ID, ChallengeID, amount, expiref, pri
 
 function acceptOffer(id){
 	$.ajax({
-		// url: 'http://crossshopper.com/AcceptOffer?offerId=' + id,
 		url: '/AcceptOffer?offerId=' + id,
 		type: 'post',
 		dataType: 'json',
@@ -121,7 +114,6 @@ function postLogin(){
 	});
 }
 
-// var url = 'http://www.amazon.fr/Umbro-Velocita-Chaussures-Football-Comp%C3%A9tition/dp/B00XRWGMDM?ie=UTF8&redirect=true&ref_=br_asw_pdt-1';
 function scrap(url){
 	var self = this;
 	var product = {};
@@ -138,18 +130,14 @@ function scrap(url){
 		$('#description').val(data.description);
 		$('#price').val(data.price);
 		$('#image').val(data.image);
-		var tpl = $('#offer-tpl').html();
-		var html = Mustache.render(tpl, data);
-		$('#offers').html(html);
 	}).fail(function(xhr, status, errorThrown){
 		console.log('Erreur :', xhr, status, errorThrown);
 	});
 };
 
 $(document).ready(function(){
-	// console.log(start);
 	$('#execute').click(function(){
-		var url = $('#path').val();
+		var url = $('#exampleInputEmail1').val();
 		console.log(url);
 		scrap(url);
 	});
@@ -157,11 +145,9 @@ $(document).ready(function(){
 		event.preventDefault();
 		postLogin();
 	});
-	$('a').click(function(event){
-		event.preventDefault();
-	});
+	
 	$('#getChallenges').click(function(event){
-		// event.preventDefault();
+		event.preventDefault();
 		console.log('Challenge');
 		$.ajax({
 			url: "http://crossshopper.com/api/Challenge",

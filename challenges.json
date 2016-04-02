@@ -1,5 +1,6 @@
 {
 	"challenges" : 
+	[
 	{
 		"title" : "Menzzo HY80412 Contemporain Fidelio Canap&#xE9; Sc…e 2 Places Bois/Tissu Gris Clair 85 x 148 x 86 cm",
 		"description" : " <ul > </ul> <span > <ul><li><b>Garantie</b>: 1 an(s)</li><li><b>Mati&#xE8;re</b>: Bois</li><li><b>Couleur</b>: Gris</li><li><b>Dimensions</b>: 85 x 148 x 86 cm</li></ul> </span>",
@@ -30,4 +31,5 @@
 		"image" : "http://ecx.images-amazon.com/images/I/511SR4N5sEL._SY300_QL70_.jpg",
 		"price" : "EUR 12,99",
 	},
+	]
 }
