@@ -40,7 +40,7 @@ app.get('/', function(req, res, next){
 
 app.post('/login', function(req, res, next){
 	console.log(req);
-	res.send(login);
+	return req;
 });
 
 app.get('/api/scrap', function(req, res, next){
