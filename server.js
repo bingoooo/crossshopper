@@ -11,11 +11,14 @@ var users = {
 	"admin" : "admin",
 	"shopper" : "shopper",
 };
-var challenges;
+fs.openFileSync('challenges.json', 'r');
+var challenges = fs.readFileSync('challenges.json');
+fs.closeFile('challenges.json');
+console.log(challenges);
 
 var header = fs.readFileSync(__dirname + '/html/header.html', 'utf-8');
 var footer = fs.readFileSync(__dirname + '/html/footer.html', 'utf-8');
-var body = fs.readFileSync(__dirname + '/html/accueil.html', 'utf-8')
+var body = fs.readFileSync(__dirname + '/html/body.html', 'utf-8')
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -28,7 +31,17 @@ app.use(express.static('public'));
 app.get('/', function(req, res, next){
 	var page = header + body + footer;
 	res.sendFile(__dirname + '/html/index.html'); 	// option en one static page
-	// res.send(page);								// option en dynamic page (WIP)
+	res.send(page);									// option en dynamic page (WIP)
+});
+
+app.get('/challenges', function(req, res, next){
+	res.send(challenges);
+});
+
+app.post('/challenge', function(req, res, next){
+	console.log(req.body);
+	var data = req.body;
+	fs.appendFileSync('challenges.json', data);
 });
 
 app.post('/login', function(req, res, next){
