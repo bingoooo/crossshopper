@@ -127,8 +127,23 @@ p.mh-paragraphe-2{
 	margin-bottom: 42px;
 }
 
+/************************************/
+/************** article  **********************/
+/************************************/
 
+.container.mh-article {
+	margin-top: 24px;
+	margin-bottom: 53px;
+}
 
+.container.mh-ajout-article {
+	display:none;
+}
 
+.container.mh-ajout-article {
+	display: none;
+}
 
-
+.container.mh-article {
+	display: none;
+}
