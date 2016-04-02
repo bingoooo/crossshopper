@@ -11,10 +11,10 @@ var users = {
 	"admin" : "admin",
 	"shopper" : "shopper",
 };
-fs.openFileSync('challenges.json', 'r');
-var challenges = fs.readFileSync('challenges.json');
-fs.closeFile('challenges.json');
-console.log(challenges);
+// fs.openFileSync('challenges.json', 'r');
+// var challenges = fs.readFileSync('challenges.json');
+// fs.closeFile('challenges.json');
+// console.log(challenges);
 
 var header = fs.readFileSync(__dirname + '/html/header.html', 'utf-8');
 var footer = fs.readFileSync(__dirname + '/html/footer.html', 'utf-8');
@@ -34,11 +34,11 @@ app.get('/', function(req, res, next){
 	// res.send(page);									// option en dynamic page (WIP)
 });
 
-app.get('/demande', function(){
+app.get('/demande', function(req, res, next){
 	res.sendFile(__dirname + '/html/article.html');
 });
 
-app.get('/offre', function(){
+app.get('/offre', function(req, res, next){
 	res.send('lolo');
 });
 
