@@ -12,7 +12,7 @@ function getChallenges(){
 };
 
 function getChallenge(id){
-	fetch('http://crossshopper.com/api/Challenge/' + id)
+	fetch('/api/Challenge?id=' + id)
 		.then(
 			function(response){
 				response.json().then(function(data){
@@ -22,18 +22,20 @@ function getChallenge(id){
 		);
 };
 
-function postChallenge(title, description, price, image){
+function postChallenge(id, title, description, price, image, type){
 	$.ajax({
-		url: 'http://crossshopper.com/api/Challenge',
+		url: '/api/Challenge',
 		type: 'post',
 		dataType: 'json',
 		data : {
-  			"Title": title,
-  			"Description": description,
-  			"StartDate": "2016-04-01T08:45:10.783Z",
-  			"ExpiryDate": "2016-04-01T08:45:10.783Z",
-  			"Price": price,
-  			"ImageData": image,
+  			"Id": id,
+			"Title": title,
+			"Description": description,
+			"StartDate": "2016-04-02T00:28:05.612Z",
+			"ExpiryDate": "2016-04-02T00:28:05.612Z",
+			"Price": price,
+			"ImageData": image,
+			"Type": type
 		},
 	}).done(function(data){
 		console.log('Success :', data);
@@ -41,7 +43,7 @@ function postChallenge(title, description, price, image){
 };
 
 function getOffers(id){
-	fetch('http://crossshopper.com/GetOffersFromChallenge?ChallengeId=' + id)
+	fetch('/GetOffersFromChallenge?ChallengeId=' + id)
 		.then(
 			function(response){
 				response.json().then(function(data){
@@ -53,7 +55,7 @@ function getOffers(id){
 
 function getOffer(id){
 	$.ajax({
-		url: 'http://crossshopper.com/api/Offer/' + id,
+		url: '/api/Offer/' + id,
 		type: 'post',
 		dataType: 'json',
 	}).done(function(data){
@@ -61,18 +63,25 @@ function getOffer(id){
 	});
 };
 
-function postOffer(title, description, price, image){
+function postOffer(id, title, description, ID, ChallengeID, amount, expiref, price, image, type, UserID){
+	var start = new Date(Date.now());
+	var end = new Date(Date.now()+(1000*60*60*24*2));
+	start = start.toDateString();
 	$.ajax({
-		url: 'http://crossshopper.com/api/Offer',
+		url: '/api/Offer',
 		type: 'post',
 		dataType: 'json',
 		data : {
-  			"Title": title,
-  			"Description": description,
-  			"StartDate": "2016-04-01T08:45:10.783Z",
-  			"ExpiryDate": "2016-04-01T08:45:10.783Z",
-  			"Price": price,
-  			"ImageData": image,
+			"Id": id,
+    		"Title": title,
+    		"Description": description,
+    		"StartDate": "2016-04-02T00:28:05.763Z",
+		    "EndDate": "2016-04-02T00:28:05.763Z",
+		    "ID": ID,
+		    "ChallengeID": challenge_id,
+		    "Amount": amount,
+		    "Expired": expired,
+		    "UserID": useridr2
 		},
 	}).done(function(data){
 		console.log('Success :', data);
@@ -81,7 +90,7 @@ function postOffer(title, description, price, image){
 
 function acceptOffer(id){
 	$.ajax({
-		url: 'http://crossshopper.com/AcceptOffer?offerId=' + id,
+		url: '/AcceptOffer?offerId=' + id,
 		type: 'post',
 		dataType: 'json',
 	}).done(function(data){
@@ -89,7 +98,22 @@ function acceptOffer(id){
 	});	
 }
 
-// var url = 'http://www.amazon.fr/Umbro-Velocita-Chaussures-Football-Comp%C3%A9tition/dp/B00XRWGMDM?ie=UTF8&redirect=true&ref_=br_asw_pdt-1';
+function postLogin(){
+	var login = $('#login').val();
+	var pwd = $('#pwd').val();
+	$.ajax({
+		url: '/login',
+		type: 'post',
+		dataType: 'json',
+		data : {
+			"login" : login,
+			"pwd" : pwd,
+		},
+	}).done(function(data){
+		console.log('Success :', data);
+	});
+}
+
 function scrap(url){
 	var self = this;
 	var product = {};
@@ -106,9 +130,6 @@ function scrap(url){
 		$('#description').val(data.description);
 		$('#price').val(data.price);
 		$('#image').val(data.image);
-		var tpl = $('#offer-tpl').html();
-		var html = Mustache.render(tpl, data);
-		$('#offers').html(html);
 	}).fail(function(xhr, status, errorThrown){
 		console.log('Erreur :', xhr, status, errorThrown);
 	});
@@ -116,9 +137,29 @@ function scrap(url){
 
 $(document).ready(function(){
 	$('#execute').click(function(){
-		var url = $('#path').val();
+		var url = $('#exampleInputEmail1').val();
 		console.log(url);
 		scrap(url);
 	});
-	// scrap(url);
+	$('#beLog').click(function(event){
+		event.preventDefault();
+		postLogin();
+	});
+	
+	$('#getChallenges').click(function(event){
+		event.preventDefault();
+		console.log('Challenge');
+		$.ajax({
+			url: "http://crossshopper.com/api/Challenge",
+			type: 'GET',
+			dataType: 'json'
+		}).done(function(data){
+			var challenges = {"challenges": data};
+			console.log(challenges);
+			var tpl = $('#challenges-tpl').html();
+			var html = Mustache.render(tpl, challenges);
+			console.log(html);
+			$('#template').html(html);
+		});
+	});
 });

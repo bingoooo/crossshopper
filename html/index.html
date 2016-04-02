@@ -6,7 +6,7 @@
 	<meta name="description" content="" />
     <meta name="viewport" content="width=device-width, user-scalable=no"/>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-		<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<link href='https://fonts.googleapis.com/css?family=Lato:400,300,100,700,900' rel='stylesheet' type='text/css'>
 
@@ -27,8 +27,8 @@
 					</div>
 					<div class="col-md-3"></div>
 					<div class="col-md-7">
-						<form>
-							<fieldset>
+						<form action="/login" method="POST">
+							<fieldset id="login">
 								<p>Identifiez vous :</p>
 								<input type="text" name="login" id="login" placeholder="login..."/>
 								<input type="password" name="pwd" id="pwd" placeholder="password..."/>
@@ -82,7 +82,7 @@
 
 		<h3 class="text-center mh-julbotron-title boldy">Vous cherchez un produit moins cher ?</h3>
 		<h3 class="text-center mh-julbotron-title thinny">Notre communauté trouve pour vous</h3>
-		<button class="btn btn-danger mh-button-chercher">On cherche pour moi</button>
+		<a href="/demande" class="btn btn-danger mh-button-chercher">On cherche pour moi</a>
 		<p class="mh-paragraphe-1">Des internautes vont chercher les meilleurs offres pour vous</p>
 		<p class="mh-paragraphe-1">Faire des économies de temps et d'argent !</p>
 	</div>
@@ -90,15 +90,15 @@
 		<h3 class="text-center mh-julbotron-title boldy">Vous avez des bon plans</h3>
 		<h3 class="text-center mh-julbotron-title thinny">Partagez les et gagner en retour !</h3>
 		<button class="btn btn-default mh-button-shopper">Je suis shopper</button>
-		<p class="mh-paragraphe-2">rejoignez une grande comunauté.</p>
-		<p class="mh-paragraphe-2">choissisez une mission et proposez vos bon plan !</p>
+		<p class="mh-paragraphe-2">Rejoignez une grande comunauté.</p>
+		<p class="mh-paragraphe-2">Choissisez une mission et proposez vos bon plan !</p>
 		<p class="mh-paragraphe-2">Gagner de l'argent quand vos propositions sont choisi</p>
 
 	</div>	
 	</div>	
 </div>	
 
-<div class="container-fluid mh-punchline">
+<div id="template" class="container-fluid mh-punchline">
 	<div class="container">
 		<div class="col-md-6 ">
 			<h3>FACILE RAPIDE ET EFFICACE</h3>
@@ -147,10 +147,11 @@
 			<p>Répondez aux missions shopping qui vous plaisent, quand vous voulez et où vous voulez.</p>
 			<p>Gagnez des points pour chaque mission accomplie et convertissez les en argent, en bons d'achat ou en crédirs pour lancer votre propre demande de recherche.</p>
 			<p>Comme quoi aidez les autres ça rapporte !</p>
-			<button>On cherche pour moi</button>
+			<button id="findForMe">On cherche pour moi</button>
 		</article>
 	</div>
 </section>
+	
 
 <footer>
 	<div id="foot-container">
@@ -172,7 +173,8 @@
 		</ul>
 		<ul>
 			<li>Twitter</li>
-			<li></li>
+			<li>
+			</li>
 		</ul>
 		<ul>
 			<li>Facebook</li>
@@ -182,7 +184,18 @@
 </footer>
 
 
+	<script id="challenges"></script>
+	<script id="challenges-tpl" type="text/plain">
+	{{# challenges}}
+		<div >
+			<p>{{{Title}}}</p>
+			<p>{{{Description}}}</p>
+			<p>{{{Price}}}</p>
+		</div>
+	{{/ challenges}}
+	</script>
 	<script src="js/jquery.js"></script>
+	<script src="/js/mustache.js"></script>
 	<script src="js/app.js"></script>
 </body>
 </html>

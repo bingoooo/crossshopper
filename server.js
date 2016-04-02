@@ -1,3 +1,5 @@
+// Bibliothèque utilisée
+
 var express = require('express');
 var nodemailer = require('nodemailer');
 var $ = require('jquery');
@@ -7,23 +9,51 @@ var request = require('request');
 var cheerio = require('cheerio');
 var app = express();
 
+// table utilisateur par défaut
+var users = {
+	"admin" : "admin",
+	"shopper" : "shopper",
+};
 
-var header = fs.readFileSync(__dirname + '/html/header.html', 'utf-8');
-var footer = fs.readFileSync(__dirname + '/html/footer.html', 'utf-8');
-var body = fs.readFileSync(__dirname + '/html/body.html', 'utf-8')
-
+// Authorisation Cross Access
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
 
+// Dossier utilisé pour les fichiers statiques situés à la racine du site
 app.use(express.static('public'));
 
+// Chemin vers l'index
 app.get('/', function(req, res, next){
 	var page = header + body + footer;
+	res.sendFile(__dirname + '/html/index.html');
+});
+
+// Chemin vers la page de soumission de challenge
+app.get('/demande', function(req, res, next){
 	res.sendFile(__dirname + '/html/article.html');
-	// res.send(page);
+});
+
+// Work in Progress : chemin vers la page de proposition d'offres
+app.get('/offre', function(req, res, next){
+	res.send('lolo');
+});
+
+app.get('/challenges', function(req, res, next){
+	res.send(challenges);
+});
+
+app.post('/challenge', function(req, res, next){
+	console.log(req.body);
+	var data = req.body;
+	fs.appendFileSync('challenges.json', data);
+});
+
+app.post('/login', function(req, res, next){
+	console.log('logged');
+	res.send(users);
 });
 
 app.get('/api/scrap', function(req, res, next){
