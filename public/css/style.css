@@ -42,6 +42,7 @@ input.placeholder, textarea.placeholder {color: #aaa;}
 .navbar-form .form-group input{background:#9e1b61;border:none;border-radius:5px;-webkit-border-radius:5px;padding:10px 20px;color:#fff;width:inherit;}
 .nav > li:first-child > a{padding-left:0;}
 
+
 /************************************/
 /**************  PRESENTATION **********************/
 /************************************/
@@ -69,7 +70,62 @@ input.placeholder, textarea.placeholder {color: #aaa;}
 
 
 
+/************************************/
+/**************  INSCRIPTION **********************/
+/************************************/
+.btn.btn-default.mh-button-shopper{
+	margin-left: 156px;
+	margin-top: 19px;
+	margin-bottom: 30px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
 
+.btn.btn-danger.mh-button-chercher{
+	margin-left: 133px;
+	margin-top: 19px;
+	margin-bottom: 30px;
+}
+
+p.mh-paragraphe-1 {
+	padding-left: 0px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	color: white;
+}
+p.mh-paragraphe-2{
+	padding-left: 0px;
+	color: white;
+}
+.mh-jumbotron {
+	background-image:url(/img/fond-jumbotron.jpg);
+}
+.col-md-5.mh-container-jumbotron {
+	margin-top: 0px;
+	margin-bottom:14px;
+}
+.mh-title-button {
+	padding-top: 10px; 
+	padding-bottom: 10px;
+}
+
+.mh-julbotron-title {
+	color: white;
+}
+
+/************************************/
+/************** EXPLICATION  **********************/
+/************************************/
+
+.mh-row {
+	padding-left: 27px;
+	padding-top: 32px;
+}
+
+.mh-punchline {
+	margin-top: 42px;
+	margin-bottom: 42px;
+}
 
 
 
