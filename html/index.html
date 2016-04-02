@@ -98,7 +98,7 @@
 	</div>	
 </div>	
 
-<div class="container-fluid mh-punchline">
+<div id="template" class="container-fluid mh-punchline">
 	<div class="container">
 	<div class="col-md-5 ">
 	<h3>FACILE RAPIDE ET EFFICACE</h3>
@@ -143,12 +143,13 @@
 	
 	<script id="challenges"></script>
 	<script id="challenges-tpl" type="text/plain">
-		<div>
-			{{{title}}}<br>
-			{{{description}}}<br>
-			<img src={{{image}}} /><br>
-			{{{price}}}<br>
+	{{# challenges}}
+		<div >
+			<p>{{{Title}}}</p>
+			<p>{{{Description}}}</p>
+			<p>{{{Price}}}</p>
 		</div>
+	{{/ challenges}}
 	</script>
 	<script src="js/jquery.js"></script>
 	<script src="/js/mustache.js"></script>

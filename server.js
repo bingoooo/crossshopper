@@ -17,13 +17,6 @@ var header = fs.readFileSync(__dirname + '/html/header.html', 'utf-8');
 var footer = fs.readFileSync(__dirname + '/html/footer.html', 'utf-8');
 var body = fs.readFileSync(__dirname + '/html/accueil.html', 'utf-8')
 
-http.get('http://www.google.com/index.html', (res) => {
-  	console.log(`Got response: ${res.statusCode}`);
-	fs.writeFileSync('challenges.json', res.body);
- 	res.resume();
-}).on('error', (e) => {
-  console.log(`Got error: ${e.message}`);
-});
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -39,8 +32,8 @@ app.get('/', function(req, res, next){
 });
 
 app.post('/login', function(req, res, next){
-	console.log(req);
-	return req;
+	console.log('logged');
+	res.send(users);
 });
 
 app.get('/api/scrap', function(req, res, next){

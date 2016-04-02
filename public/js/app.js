@@ -108,7 +108,6 @@ function acceptOffer(id){
 function postLogin(){
 	var login = $('#login').val();
 	var pwd = $('#pwd').val();
-	var now = Date.now();
 	$.ajax({
 		url: '/login',
 		type: 'post',
@@ -155,6 +154,7 @@ $(document).ready(function(){
 		scrap(url);
 	});
 	$('#beLog').click(function(event){
+		event.preventDefault();
 		postLogin();
 	});
 	$('a').click(function(event){
@@ -173,7 +173,7 @@ $(document).ready(function(){
 			var tpl = $('#challenges-tpl').html();
 			var html = Mustache.render(tpl, challenges);
 			console.log(html);
-			$('#challenges').html(html);
+			$('#template').html(html);
 		});
 	});
 });
