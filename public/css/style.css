@@ -154,16 +154,24 @@ footer #social-foot li:nth-child(2) a{
 .container.mh-article {
 	margin-top: 24px;
 	margin-bottom: 53px;
+	display: none;
 }
 
 .container.mh-ajout-article {
 	display:none;
+	margin-top: 24px;
+	margin-bottom: 24px;
 }
 
-.container.mh-ajout-article {
-	display: none;
-}
+
 
 .container.mh-article {
 	display: none;
+	margin-top: 24px;
+	margin-bottom: 24px;
+}
+
+.container.mh-inscription {
+	margin-top: 24px;
+	margin-bottom: 24px;
 }
