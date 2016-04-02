@@ -26,7 +26,7 @@ a{text-decoration:none;display:block;}
 #header-top form{text-align:right;}
 #header-top form p, #header-top form input{display:inline-block;vertical-align:middle;}
 #header-top form input{width:150px;background:#212121;border-radius:5px;-webkit-border-radius:5px;border:1px solid #333;padding:5px;}
-#header-top form input[type="submit"]{width:50px;background:#9e1b61;color:#fff;}
+#header-top form input[type="submit"]{width:auto;background:#9e1b61;color:#fff;padding:5px 10px;}
 input, textarea {color: #aaa;}
 input:-moz-placeholder, textarea:-moz-placeholder {color: #aaa;}
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #aaa;}
@@ -47,43 +47,27 @@ input.placeholder, textarea.placeholder {color: #aaa;}
 /************************************/
 
 #presentation-concept{color:#fff;padding:0;}
-
 #becomeCross{background:#3f2d3d;display:flex;}
 #becomefound{background:#6d6e70;display:flex;}
 #becomeCross div{background-image:url('/img/becomeCross.jpg');background-repeat:no-repeat;background-size:cover;}
-#becomefound div{
-	background-image:url('/img/becomeFound.jpg');
-	background-repeat:no-repeat;
-	background-size:cover;
-}
+#becomefound div{background-image:url('/img/becomeFound.jpg');background-repeat:no-repeat;background-size:cover;}
+#becomeCross article, #becomefound article{padding:60px 50px 60px 90px;width:50%;}
+#becomeCross div, #becomefound div{padding:60px 50px}
+#becomeCross p, #becomefound p{margin-bottom:20px;font-size:18px;}
+#becomeCross button, #becomefound button{padding:15px 20px;background:#594457;border:none;border-radius:10px;-webkit-border-radius:10px;margin-top:40px;float:right;text-transform:uppercase;font-size:13px;}
+#becomefound button{background:#9a9ea1;}
+.titre-pre{font-size:40px;font-weight:900;margin-bottom:40px;}
 
-#becomeCross article, #becomefound article, #becomeCross div, #becomefound div{
-	padding:60px 50px;
-	width:50%;
-}
-#becomeCross p, #becomefound p{
-	margin-bottom:20px;
-	font-size:18px;
-}
-#becomeCross button, #becomefound button{
-	padding:15px 20px;
-	background:#594457;
-	border:none;
-	border-radius:10px;
-	-webkit-border-radius:10px;
-	margin-top:40px;
-	float:right;
-	text-transform:uppercase;
-	font-size:13px;
-}
-#becomefound button{
-	background:#9a9ea1;
-}
-.titre-pre{
-	font-size:40px;
-	font-weight:900;
-	margin-bottom:40px;
-}
+
+/************************************/
+/**************  FOOTER **********************/
+/************************************/
+
+
+
+
+
+
 
 
 
