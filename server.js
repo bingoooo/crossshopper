@@ -31,7 +31,15 @@ app.use(express.static('public'));
 app.get('/', function(req, res, next){
 	var page = header + body + footer;
 	res.sendFile(__dirname + '/html/index.html'); 	// option en one static page
-	res.send(page);									// option en dynamic page (WIP)
+	// res.send(page);									// option en dynamic page (WIP)
+});
+
+app.get('/demande', function(){
+	res.sendFile(__dirname + '/html/article.html');
+});
+
+app.get('/offre', function(){
+	res.send('lolo');
 });
 
 app.get('/challenges', function(req, res, next){
