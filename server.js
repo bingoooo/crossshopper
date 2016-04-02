@@ -22,7 +22,7 @@ app.use(express.static('public'));
 
 app.get('/', function(req, res, next){
 	var page = header + body + footer;
-	res.sendFile(__dirname + '/html/index.html');
+	res.sendFile(__dirname + '/html/article.html');
 	// res.send(page);
 });
 
