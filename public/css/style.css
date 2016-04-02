@@ -1,5 +1,5 @@
 /* RESET CSS*/
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {margin: 0;padding: 0;border: 0;font-size: 100%;font: inherit;vertical-align: baseline;font-family:arial;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {margin: 0;padding: 0;border: 0;font-size: 100%;font: inherit;vertical-align: baseline;font-family: 'Lato', sans-serif;}
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, img {display: block;}
 ol, ul {list-style: none;}
@@ -7,6 +7,7 @@ blockquote, q {quotes: none;}
 blockquote:before, blockquote:after, q:before, q:after {content: '';content: none;}
 table {border-collapse: collapse;border-spacing: 0;}
 a{text-decoration:none;display:block;}
+
 
 /************************************/
 /************************************/
@@ -35,56 +36,59 @@ input.placeholder, textarea.placeholder {color: #aaa;}
 /**************  NAVIGATION **********************/
 /************************************/
 
+.navbar-default{background:#fff;color:#2e2e2e;padding:10px 0;margin-bottom:0;}
+.navbar-form{padding-right:0;}
+.navbar-form .form-group label{color:#777;margin-right:15px;}
+.navbar-form .form-group input{background:#9e1b61;border:none;border-radius:5px;-webkit-border-radius:5px;padding:10px 20px;color:#fff;width:inherit;}
+.nav > li:first-child > a{padding-left:0;}
 
 
+/************************************/
+/**************  PRESENTATION **********************/
+/************************************/
 
+#presentation-concept{color:#fff;padding:0;}
 
-.navbar-default{
-	background:#fff;
-	color:#2e2e2e;
-	padding:10px 0;
-}
-.navbar-form{
-	padding-right:0;
-}
-.navbar-form .form-group label{
-	color:#777;
-	margin-right:15px;
-}
-.navbar-form .form-group input{
-	background:#9e1b61;
-	border:none;
-	border-radius:5px;-webkit-border-radius:5px;
-	padding:10px 20px;
-	color:#fff;
-	width:inherit;
-}
-.nav > li:first-child > a{
-	padding-left:0;
-}
-#presentation-concept{
-	color:#fff;
-	padding:0;
+#becomeCross{background:#3f2d3d;display:flex;}
+#becomefound{background:#6d6e70;display:flex;}
+#becomeCross div{background-image:url('/img/becomeCross.jpg');background-repeat:no-repeat;background-size:cover;}
+#becomefound div{
+	background-image:url('/img/becomeFound.jpg');
+	background-repeat:no-repeat;
+	background-size:cover;
 }
 
-#becomeCross{
-	background:#3f2d3d;
+#becomeCross article, #becomefound article, #becomeCross div, #becomefound div{
+	padding:60px 50px;
+	width:50%;
 }
-#becomeCross article{
-	padding:60px 30px;
-
-}
-#becomeCross p{
+#becomeCross p, #becomefound p{
 	margin-bottom:20px;
-	font-size:20px;
+	font-size:18px;
+}
+#becomeCross button, #becomefound button{
+	padding:15px 20px;
+	background:#594457;
+	border:none;
+	border-radius:10px;
+	-webkit-border-radius:10px;
+	margin-top:40px;
+	float:right;
+	text-transform:uppercase;
+	font-size:13px;
+}
+#becomefound button{
+	background:#9a9ea1;
 }
 .titre-pre{
 	font-size:40px;
 	font-weight:900;
-	margin-bottom:30px;
+	margin-bottom:40px;
 }
 
-
+/************************************/
+/**************  INSCRIPTION **********************/
+/************************************/
 .btn.btn-default.mh-button-shopper{
 	margin-left: 156px;
 	margin-top: 19px;
@@ -103,9 +107,11 @@ p.mh-paragraphe-1 {
 	padding-left: 0px;
 	margin-top: 10px;
 	margin-bottom: 10px;
+	color: white;
 }
 p.mh-paragraphe-2{
 	padding-left: 0px;
+	color: white;
 }
 .mh-jumbotron {
 	background-image:url(/img/fond-jumbotron.jpg);
@@ -122,6 +128,21 @@ p.mh-paragraphe-2{
 .mh-julbotron-title {
 	color: white;
 }
+
+/************************************/
+/************** EXPLICATION  **********************/
+/************************************/
+
+.mh-row {
+	padding-left: 27px;
+	padding-top: 32px;
+}
+
+.mh-punchline {
+	margin-top: 42px;
+	margin-bottom: 42px;
+}
+
 
 
 
