@@ -10,12 +10,20 @@ var app = express();
 var users = {
 	"admin" : "admin",
 	"shopper" : "shopper",
-}
+};
+var challenges;
 
 var header = fs.readFileSync(__dirname + '/html/header.html', 'utf-8');
 var footer = fs.readFileSync(__dirname + '/html/footer.html', 'utf-8');
-var body = fs.readFileSync(__dirname + '/html/body.html', 'utf-8')
+var body = fs.readFileSync(__dirname + '/html/accueil.html', 'utf-8')
 
+http.get('http://www.google.com/index.html', (res) => {
+  	console.log(`Got response: ${res.statusCode}`);
+	fs.writeFileSync('challenges.json', res.body);
+ 	res.resume();
+}).on('error', (e) => {
+  console.log(`Got error: ${e.message}`);
+});
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -26,13 +34,13 @@ app.use(express.static('public'));
 
 app.get('/', function(req, res, next){
 	var page = header + body + footer;
-	res.sendFile(__dirname + '/html/index.html');
-	// res.send(page);
+	// res.sendFile(__dirname + '/html/index.html');
+	res.send(page);
 });
 
 app.post('/login', function(req, res, next){
-	console.log(req.body);
-	res.send('log request');
+	console.log(req);
+	res.send(res);
 });
 
 app.get('/api/scrap', function(req, res, next){

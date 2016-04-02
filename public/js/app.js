@@ -24,19 +24,21 @@ function getChallenge(id){
 		);
 };
 
-function postChallenge(title, description, price, image){
+function postChallenge(id, title, description, price, image, type){
 	$.ajax({
 		// url: 'http://crossshopper.com/api/Challenge',
 		url: '/api/Challenge',
 		type: 'post',
 		dataType: 'json',
 		data : {
-  			"Title": title,
-  			"Description": description,
-  			"StartDate": "2016-04-01T08:45:10.783Z",
-  			"ExpiryDate": "2016-04-01T08:45:10.783Z",
-  			"Price": price,
-  			"ImageData": image,
+  			"Id": id,
+			"Title": title,
+			"Description": description,
+			"StartDate": "2016-04-02T00:28:05.612Z",
+			"ExpiryDate": "2016-04-02T00:28:05.612Z",
+			"Price": price,
+			"ImageData": image,
+			"Type": type
 		},
 	}).done(function(data){
 		console.log('Success :', data);
@@ -66,7 +68,7 @@ function getOffer(id){
 	});
 };
 
-function postOffer(id, title, description, price, image, type){
+function postOffer(id, title, description, ID, ChallengeID, amount, expiref, price, image, type, UserID){
 	var start = new Date(Date.now());
 	var end = new Date(Date.now()+(1000*60*60*24*2));
 	start = start.toDateString();
@@ -77,13 +79,15 @@ function postOffer(id, title, description, price, image, type){
 		dataType: 'json',
 		data : {
 			"Id": id,
-  			"Title": title,
-  			"Description": description,
-  			"StartDate": start,
-  			"ExpiryDate": end,
-  			"Price": price,
-  			"ImageData": image,
-  			"Type": type,
+    		"Title": title,
+    		"Description": description,
+    		"StartDate": "2016-04-02T00:28:05.763Z",
+		    "EndDate": "2016-04-02T00:28:05.763Z",
+		    "ID": ID,
+		    "ChallengeID": challenge_id,
+		    "Amount": amount,
+		    "Expired": expired,
+		    "UserID": useridr2
 		},
 	}).done(function(data){
 		console.log('Success :', data);
@@ -106,7 +110,7 @@ function postLogin(){
 	var pwd = $('#pwd').val();
 	var now = Date.now();
 	$.ajax({
-		url: '/api/Offer',
+		url: '/login',
 		type: 'post',
 		dataType: 'json',
 		data : {
@@ -150,7 +154,7 @@ $(document).ready(function(){
 		console.log(url);
 		scrap(url);
 	});
-	$('#beLog').click(function(){
+	$('#beLog').click(function(event){
 		postLogin();
 	});
 });
