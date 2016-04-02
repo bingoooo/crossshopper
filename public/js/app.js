@@ -1,8 +1,8 @@
 'use strict';
 
 function getChallenges(){
-	// fetch('http://crossshopper.com/api/Challenge')
-	fetch('/api/Challenge')
+	fetch('http://crossshopper.com/api/Challenge')
+	// fetch('/api/Challenge')
 		.then(
 			function(response){
 				response.json().then(function(data){
@@ -156,5 +156,24 @@ $(document).ready(function(){
 	});
 	$('#beLog').click(function(event){
 		postLogin();
+	});
+	$('a').click(function(event){
+		event.preventDefault();
+	});
+	$('#getChallenges').click(function(event){
+		// event.preventDefault();
+		console.log('Challenge');
+		$.ajax({
+			url: "http://crossshopper.com/api/Challenge",
+			type: 'GET',
+			dataType: 'json'
+		}).done(function(data){
+			var challenges = {"challenges": data};
+			console.log(challenges);
+			var tpl = $('#challenges-tpl').html();
+			var html = Mustache.render(tpl, challenges);
+			console.log(html);
+			$('#challenges').html(html);
+		});
 	});
 });

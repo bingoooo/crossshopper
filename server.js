@@ -34,13 +34,13 @@ app.use(express.static('public'));
 
 app.get('/', function(req, res, next){
 	var page = header + body + footer;
-	// res.sendFile(__dirname + '/html/index.html');
-	res.send(page);
+	res.sendFile(__dirname + '/html/index.html'); 	// option en one static page
+	// res.send(page);								// option en dynamic page (WIP)
 });
 
 app.post('/login', function(req, res, next){
 	console.log(req);
-	res.send(res);
+	res.send(login);
 });
 
 app.get('/api/scrap', function(req, res, next){

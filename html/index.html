@@ -89,7 +89,7 @@
 	<div class="col-md-offset-2 col-md-5 mh-container-jumbotron">
 		<h3 class="text-center mh-julbotron-title">Vous avez des bon plans</h3>
 		<h3 class="text-center mh-julbotron-title">Partagez les et gagner en retour !</h3>
-		<button class="btn btn-default mh-button-shopper"><a href=""><h4 class="mh-title-button">Je suis shopper</h4></a></button>
+		<button class="btn btn-default mh-button-shopper"><a id="getChallenges" href=""><h4 class="mh-title-button">Je suis shopper</h4></a></button>
 		<p class="mh-paragraphe-2">rejoignez une grande comunauté.</p>
 		<p class="mh-paragraphe-2">choissisez une mission et proposez vos bon plan !</p>
 		<p class="mh-paragraphe-2">Gagner de l'argent quand vos propositions sont choisi</p>
@@ -136,13 +136,22 @@
 			<p>Répondez aux missions shopping qui vous plaisent, quand vous voulez et où vous voulez.</p>
 			<p>Gagnez des points pour chaque mission accomplie et convertissez les en argent, en bons d'achat ou en crédirs pour lancer votre propre demande de recherche.</p>
 			<p>Comme quoi aidez les autres ça rapporte !</p>
-			<button>On cherche pour moi</button>
+			<button id="findForMe">On cherche pour moi</button>
 		</article>
 	</div>
 </section>
-
-
+	
+	<script id="challenges"></script>
+	<script id="challenges-tpl" type="text/plain">
+		<div>
+			{{{title}}}<br>
+			{{{description}}}<br>
+			<img src={{{image}}} /><br>
+			{{{price}}}<br>
+		</div>
+	</script>
 	<script src="js/jquery.js"></script>
+	<script src="/js/mustache.js"></script>
 	<script src="js/app.js"></script>
 </body>
 </html>
