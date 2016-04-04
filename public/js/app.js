@@ -1,5 +1,9 @@
 'use strict';
 
+
+/* ---------------------
+// Challenges requests
+--------------------- */
 function getChallenges(){
 	fetch('http://crossshopper.com/api/Challenge')
 		.then(
@@ -10,7 +14,6 @@ function getChallenges(){
 			}
 		);
 };
-
 function getChallenge(id){
 	fetch('/api/Challenge?id=' + id)
 		.then(
@@ -21,7 +24,6 @@ function getChallenge(id){
 			}
 		);
 };
-
 function postChallenge(id, title, description, price, image, type){
 	$.ajax({
 		url: '/api/Challenge',
@@ -42,6 +44,10 @@ function postChallenge(id, title, description, price, image, type){
 	});
 };
 
+
+/* ---------------------
+// Offers requests part
+--------------------- */
 function getOffers(id){
 	fetch('/GetOffersFromChallenge?ChallengeId=' + id)
 		.then(
@@ -52,7 +58,6 @@ function getOffers(id){
 			}
 		);
 };
-
 function getOffer(id){
 	$.ajax({
 		url: '/api/Offer/' + id,
@@ -62,8 +67,7 @@ function getOffer(id){
 		console.log('Success :', data);
 	});
 };
-
-function postOffer(id, title, description, ID, ChallengeID, amount, expiref, price, image, type, UserID){
+function postOffer(id, title, description, ID, ChallengeID, amount, expired, price, image, type, UserID){
 	var start = new Date(Date.now());
 	var end = new Date(Date.now()+(1000*60*60*24*2));
 	start = start.toDateString();
@@ -75,8 +79,8 @@ function postOffer(id, title, description, ID, ChallengeID, amount, expiref, pri
 			"Id": id,
     		"Title": title,
     		"Description": description,
-    		"StartDate": "2016-04-02T00:28:05.763Z",
-		    "EndDate": "2016-04-02T00:28:05.763Z",
+    		"StartDate": start,
+		    "EndDate": end,
 		    "ID": ID,
 		    "ChallengeID": challenge_id,
 		    "Amount": amount,
@@ -87,7 +91,6 @@ function postOffer(id, title, description, ID, ChallengeID, amount, expiref, pri
 		console.log('Success :', data);
 	});
 };
-
 function acceptOffer(id){
 	$.ajax({
 		url: '/AcceptOffer?offerId=' + id,
@@ -98,9 +101,16 @@ function acceptOffer(id){
 	});	
 }
 
+
+
+/* -------------------
+// Login/logout Part
+------------------- */
 function postLogin(){
-	var login = $('#login').val();
+	var login = $('#user').val();
 	var pwd = $('#pwd').val();
+	console.log('login :', login);
+	console.log('password : ', pwd);
 	$.ajax({
 		url: '/login',
 		type: 'post',
@@ -113,7 +123,14 @@ function postLogin(){
 		console.log('Success :', data);
 	});
 }
+function postLogout(){
 
+}
+
+
+/* --------------------------
+// Envoi de l'url à scrapper
+--------------------------- */
 function scrap(url){
 	var self = this;
 	var product = {};
@@ -135,17 +152,26 @@ function scrap(url){
 	});
 };
 
+
+/* ----------------------
+// Démarrage Application
+----------------------- */
 $(document).ready(function(){
+
+	// Scrapper link
 	$('#execute').click(function(){
 		var url = $('#exampleInputEmail1').val();
 		console.log(url);
 		scrap(url);
 	});
+
+	// Login link
 	$('#beLog').click(function(event){
 		event.preventDefault();
 		postLogin();
 	});
 	
+	// get Challenges for display
 	$('#getChallenges').click(function(event){
 		event.preventDefault();
 		console.log('Challenge');

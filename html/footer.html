@@ -1,15 +1,46 @@
-	<footer id="footer"></footer>
-	<script src="/js/jquery.js"></script>
+<footer>
+	<div id="foot-container">
+		<ul>
+			<li>Plan du site</li>
+			<li><a href="">à propos</a></li>
+			<li><a href="">Comment ça marche</a></li>
+			<li><a href="">contactez nous</a></li>
+			<li><a href="">CGV</a></li>
+			<li><a href="">Mentions légales</a></li>
+		</ul>
+		<ul id="social-foot">
+			<li>Suivez nous</li>
+			<li>
+				<a href="#"><i class="fa fa-facebook"></i></a>
+				<a href="#"><i class="fa fa-twitter"></i></a>
+				<a href="#"><i class="fa fa-youtube-play"></i></a>
+			</li>
+		</ul>
+		<ul>
+			<li>Twitter</li>
+			<li>
+			</li>
+		</ul>
+		<ul>
+			<li>Facebook</li>
+			<li></li>
+		</ul>
+	</div>
+</footer>
+
+
+	<script id="challenges"></script>
+	<script id="challenges-tpl" type="text/plain">
+	{{# challenges}}
+		<div >
+			<p>{{{Title}}}</p>
+			<p>{{{Description}}}</p>
+			<p>{{{Price}}}</p>
+		</div>
+	{{/ challenges}}
+	</script>
+	<script src="js/jquery.js"></script>
 	<script src="/js/mustache.js"></script>
-	<script src="/js/app.js"></script>
-	<script id="challenge-tpl">
-		
-	</script>
-	<script id="offer-tpl" type="text/plain">
-		{{{title}}}<br>
-		{{{description}}}<br>
-		<img src={{{image}}} /><br>
-		{{{price}}}<br>
-	</script>
+	<script src="js/app.js"></script>
 </body>
 </html>
