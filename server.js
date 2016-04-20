@@ -101,17 +101,25 @@ app.post('/challenge', function(req, res, next){
 	fs.appendFileSync('challenges.json', data);
 });
 
+
+/***********************
+* Login
+***********************/
 app.post('/login', function(req, res, next){
 	console.log('logged :', req.body);
 	if((passwords[req.body.login] == req.body.pwd)){
 		for (var i = 0; i < users.length; i++) {
-			if (users[i].PseudoName == req.body.login) return users[i];
+			if (users[i].PseudoName == req.body.login) return res.json(users[i]);
 		}
 	} else {
 		res.json({message: "Pas d'utilisateur à ce nom..."});
 	}
 });
 
+
+/***********************
+* Scrapper
+***********************/
 app.get('/api/scrap', function(req, res, next){
 	var url = req.query.url;
 	var json = {title: "", description: "", price: "", image: ""};
