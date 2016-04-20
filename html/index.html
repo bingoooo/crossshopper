@@ -34,6 +34,8 @@
 								<input type="password" name="pwd" id="pwd" placeholder="password..."/>
 								<input type="submit" name="beLog" id="beLog" value="Connexion" />
 							</fieldset>
+							<fieldset id="user-info">
+							</fieldset>
 						</form>
 					</div>
 				</div>
@@ -89,7 +91,7 @@
 	<div class="col-md-offset-2 col-md-5 mh-container-jumbotron">
 		<h3 class="text-center mh-julbotron-title boldy">Vous avez des bon plans</h3>
 		<h3 class="text-center mh-julbotron-title thinny">Partagez les et gagner en retour !</h3>
-		<button class="btn btn-default mh-button-shopper">Je suis shopper</button>
+		<button id="getChallenges" class="btn btn-default mh-button-shopper">Je suis shopper</button>
 		<p class="mh-paragraphe-2">Rejoignez une grande comunauté.</p>
 		<p class="mh-paragraphe-2">Choissisez une mission et proposez vos bon plan !</p>
 		<p class="mh-paragraphe-2">Gagner de l'argent quand vos propositions sont choisi</p>
@@ -184,13 +186,31 @@
 </footer>
 
 
+		<!-- <div >
+			<p>{{{Title}}}</p>
+			<p>{{{Description}}}</p>
+			<img src="{{Image}}" alt="{{Description}}">
+			<p>{{{Price}}}</p>
+		</div> -->
 	<script id="challenges"></script>
 	<script id="challenges-tpl" type="text/plain">
 	{{# challenges}}
-		<div >
-			<p>{{{Title}}}</p>
-			<p>{{{Description}}}</p>
-			<p>{{{Price}}}</p>
+		<div class="container mh-article">
+			<div class="row">
+				<img src="{{Image}}" alt="{{{Description}}}" class="col-md-3">							
+				<div class="col-md-5">
+				<h3>{{{Title}}}</h3>
+				<h4>Prix de départ : {{{Price}}}€</h4>
+				<!-- <h4>Meilleure offre : 250€</h4> -->
+				<!-- <h4>3 shopper</h4> -->
+				</div>
+				<div>
+					<img src="http://www.location-orcieres.fr/img/icone_favoris.png" alt="Favori" class="col-md-offset-2 col-md-2">
+				</div>
+			</div>
+			<div class="row">
+				<button class="col-md-offset-10 col-md-2 btn btn-success">je peux faire mieux</button>
+			</div>
 		</div>
 	{{/ challenges}}
 	</script>
