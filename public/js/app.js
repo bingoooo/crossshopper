@@ -111,26 +111,42 @@ function postLogin(){
 	var pwd = $('#pwd').val();
 	console.log('login :', login);
 	console.log('password : ', pwd);
-	$.ajax({
-		url: '/login',
-		type: 'post',
-		dataType: 'json',
-		data : {
-			"login" : login,
-			"pwd" : pwd,
-		},
-	}).done(function(data){
-		console.log('Success :', data);
-	});
+	if(login != '' && pwd != ''){
+		$.ajax({
+			url: '/login',
+			type: 'post',
+			dataType: 'json',
+			data : {
+				"login" : login,
+				"pwd" : pwd,
+			},
+		}).done(function(data){
+			console.log('Success :', data);
+			if(data.message){
+				console.log('failed');
+			} else {
+				sessionStorage.setItem('FirstName', data.FirstName);
+				var datas = sessionStorage.getItem('FirstName');
+				console.log(datas);
+				var welcome = document.getElementById('login');
+				welcome.innerHTML = '<input type="submit" id="user" value="' + datas + '" />';
+				var user = document.getElementById('user');
+				// user.addEventListener('click', function(event){
+				// 	event.preventDefault();
+				// 	console.log('click');
+				// });
+			}
+		});
+	}
 }
 function postLogout(){
 
 }
 
 
-/* --------------------------
-// Envoi de l'url à scrapper
---------------------------- */
+/* ----------------------------
+// Sending url to the scrapper
+---------------------------- */
 function scrap(url){
 	var self = this;
 	var product = {};
@@ -158,6 +174,8 @@ function scrap(url){
 ----------------------- */
 $(document).ready(function(){
 
+	getChallenges();
+
 	// Scrapper link
 	$('#execute').click(function(){
 		var url = $('#exampleInputEmail1').val();
@@ -171,6 +189,11 @@ $(document).ready(function(){
 		postLogin();
 	});
 	
+	$('#login').on('change', function(event){
+		event.preventDefault();
+		
+	});
+
 	// get Challenges for display
 	$('#getChallenges').click(function(event){
 		event.preventDefault();
